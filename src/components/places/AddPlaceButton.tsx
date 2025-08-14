@@ -1,8 +1,13 @@
 'use client';
 
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { createPlace } from '@/lib/db/dbUtils';
 
 export function AddPlaceButton() {
-  const clickHandler = () => redirect('/places/4');
+  const router = useRouter();
+  const clickHandler = async () => {
+    const place = await createPlace();
+    router.push(`/places/${place.id}`);
+  };
   return <button onClick={clickHandler}>+ Place</button>;
 }

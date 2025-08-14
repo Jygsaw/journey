@@ -1,7 +1,7 @@
 import { AddPlaceButton } from '@/components/places/AddPlaceButton';
 import { PlacesList } from '@/components/places/PlacesList';
 
-export default function Page() {
+export default async function Page() {
   return (
     <section>
       <AddPlaceButton />
