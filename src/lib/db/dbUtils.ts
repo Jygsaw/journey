@@ -6,30 +6,32 @@ const dummyPlace: Place = {
   desc: 'fakeDesc',
 };
 
+const DELAY = 3000;
+
 export async function createPlace() {
   console.log(">> createPlace");
   return new Promise((resolve) => {
-    resolve(dummyPlace);
+    setTimeout(() => resolve(dummyPlace), 3000);
   });
 }
 
 export async function getPlace(placeId) {
   console.log(">> getPlace:", placeId);
   return new Promise((resolve) => {
-    resolve(dummyPlace);
+    setTimeout(() => resolve(dummyPlace), 3000);
   });
 }
 
 export async function updatePlace(place) {
   console.log(">> updatePlace:", place);
   return new Promise((resolve) => {
-    resolve(place);
+    setTimeout(() => resolve(place), 3000);
   });
 }
 
 export async function deletePlace(placeId) {
   console.log(">> deletePlace:", placeId);
   return new Promise((resolve) => {
-    resolve(true);
+    setTimeout(() => resolve(true), 3000);
   });
 }
