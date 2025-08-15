@@ -1,4 +1,5 @@
 import { getPlace } from '@/lib/db/dbUtils';
+import { EditPlace } from '@/components/places/EditPlace';
 import { AddMessageButton} from './AddMessageButton';
 import { MessagesList } from './MessagesList';
 
@@ -8,13 +9,8 @@ export default async function Page({ params }) {
 
   return (
     <section>
-      <div>
-        MAP
-      </div>
-      <ul>
-        <li>{place.name}</li>
-        <li>{place.desc}</li>
-      </ul>
+      <EditPlace place={place} />
+      <br />
       <AddMessageButton />
       <MessagesList />
     </section>
