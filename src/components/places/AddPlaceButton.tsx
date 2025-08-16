@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { createPlace } from '@/lib/db/dbUtils';
+import { createPlace } from '@/lib/dbUtils';
 
 export function AddPlaceButton() {
   const router = useRouter();
