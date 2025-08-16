@@ -1,15 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { updatePlace } from '@/lib/db/dbUtils';
+import { createLocation, updateLocation, updatePlace } from '@/lib/dbUtils';
+import { LocationSelector } from '@/components/LocationSelector';
 
 interface InputProps {
   place: Place;
+  location?: Location;
 }
 
-export function EditPlace({ place }: InputProps) {
+export function EditPlace({ place, location }: InputProps) {
   const [name, setName] = useState(place.name);
   const [desc, setDesc] = useState(place.desc);
+  const [locationId, setLocationId] = useState(location?.id);
+  const [coord, setCoord] = useState({
+    latitude: location?.latitude,
+    longitude: location?.longitude,
+  });
 
   const changeName = (e) => {
     console.log("> changing name");
@@ -19,27 +26,33 @@ export function EditPlace({ place }: InputProps) {
     console.log("> changing desc");
     setDesc(e.target.value);
   };
-  const submit = async (e) => {
+  const save = async (e) => {
     console.log("> saving changes");
-    e.preventDefault();
-    e.stopPropagation();
+
+    const updatedLocation = locationId
+      ? await updateLocation({
+          ...location,
+          ...coord,
+        })
+      : await createLocation(coord);
+
     await updatePlace({
       ...place,
       name,
       desc,
+      locationId: updatedLocation.id,
     });
   };
 
   return (
-    <form onSubmit={submit}>
-      <div>
-        MAP
-      </div>
+    <section>
+      <LocationSelector {...{ locationId, coord, setLocationId, setCoord }} />
+      <br />
       <input type="text" name="name" value={name} onChange={changeName} />
       <br />
       <textarea value={desc} onChange={changeDesc} />
       <br />
-      <button type="submit">Save</button>
-    </form>
+      <button onClick={save}>Save</button>
+    </section>
   )
 }
