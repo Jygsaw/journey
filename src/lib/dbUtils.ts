@@ -1,7 +1,12 @@
-import { Place, Location } from '@/types';
+import { User, Place, Location } from '@/types';
 import { wait } from '@/lib/utils';
 
 const DELAY = 3000;
+
+const dummyUser: User = {
+  id: 999999999,
+  name: 'Justin Cheung',
+};
 
 const dummyPlace: Place = {
   id: 999999999,
@@ -15,7 +20,30 @@ const dummyLocation: Location = {
   longitude: -119.13054,
 };
 
-export async function createPlace(place) {
+export const createUser = async (user) => {
+  await wait(DELAY);
+  return {
+    ...dummyUser,
+    ...user,
+  };
+};
+
+export const getUser = async (userId) => {
+  await wait(DELAY);
+  return dummyUser;
+};
+
+export const updateUser = async (user) => {
+  await wait(DELAY);
+  return user;
+};
+
+export const deleteUser = async () => {
+  await wait(DELAY);
+  return true;
+};
+
+export const createPlace = async (place) => {
   await wait(DELAY);
   return {
     ...dummyPlace,
@@ -23,23 +51,23 @@ export async function createPlace(place) {
   };
 }
 
-export async function getPlace(placeId) {
+export const getPlace = async (placeId) => {
   if (!placeId) return undefined;
   await wait(DELAY);
   return dummyPlace;
 }
 
-export async function updatePlace(place) {
+export const updatePlace = async (place) => {
   await wait(DELAY);
   return place;
 }
 
-export async function deletePlace(placeId) {
+export const deletePlace = async (placeId) => {
   await wait(DELAY);
   return true;
 }
 
-export async function createLocation(location) {
+export const createLocation = async (location) => {
   await wait(DELAY);
   return {
     ...dummyLocation,
@@ -47,23 +75,23 @@ export async function createLocation(location) {
   };
 }
 
-export async function getLocation(locationId) {
+export const getLocation = async (locationId) => {
   if (!locationId) return undefined;
   await wait(DELAY);
   return dummyLocation;
 }
 
-export async function updateLocation(location) {
+export const updateLocation = async (location) => {
   await wait(DELAY);
   return location;
 }
 
-export async function deleteLocation(locationId) {
+export const deleteLocation = async (locationId) => {
   await wait(DELAY);
   return true;
 }
 
-export async function getLocationFromPlace(placeOrPromise) {
+export const getLocationFromPlace = async (placeOrPromise) => {
   const place = await placeOrPromise;
   return await getLocation(place.locationId);
 }
