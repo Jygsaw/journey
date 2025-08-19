@@ -10,13 +10,13 @@ export default async function Page({ params }) {
   const locationPromise = getLocationFromPlace(placePromise);
 
   return (
-    <section>
+    <main>
       <Suspense fallback="Loading...">
         <EditPlace placePromise={placePromise} locationPromise={locationPromise} />
       </Suspense>
       <br />
       <AddMessageButton />
       <MessagesList />
-    </section>
+    </main>
   );
 }

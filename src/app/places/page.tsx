@@ -3,9 +3,9 @@ import { PlacesList } from '@/components/places/PlacesList';
 
 export default async function Page() {
   return (
-    <section>
+    <main>
       <AddPlaceButton />
       <PlacesList />
-    </section>
+    </main>
   );
 }

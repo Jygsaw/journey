@@ -3,9 +3,9 @@ import { JourneysList } from './JourneysList';
 
 export default function Page() {
   return (
-    <section>
+    <main>
       <AddJourneyButton />
       <JourneysList />
-    </section>
+    </main>
   );
 }

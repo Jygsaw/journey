@@ -1,5 +1,9 @@
 import { LoginForm } from './LoginForm';
 
 export default function Page() {
-  return <LoginForm />;
+  return (
+    <main>
+      <LoginForm />
+    </main>
+  );
 }
