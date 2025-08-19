@@ -1,6 +1,8 @@
 import { Place, Location } from '@/types';
 import { wait } from '@/lib/utils';
 
+const DELAY = 3000;
+
 const dummyPlace: Place = {
   id: 999999999,
   name: 'fakeName',
@@ -14,7 +16,7 @@ const dummyLocation: Location = {
 };
 
 export async function createPlace(place) {
-  await wait(3000);
+  await wait(DELAY);
   return {
     ...dummyPlace,
     ...place,
@@ -23,22 +25,22 @@ export async function createPlace(place) {
 
 export async function getPlace(placeId) {
   if (!placeId) return undefined;
-  await wait(3000);
+  await wait(DELAY);
   return dummyPlace;
 }
 
 export async function updatePlace(place) {
-  await wait(3000);
+  await wait(DELAY);
   return place;
 }
 
 export async function deletePlace(placeId) {
-  await wait(3000);
+  await wait(DELAY);
   return true;
 }
 
 export async function createLocation(location) {
-  await wait(3000);
+  await wait(DELAY);
   return {
     ...dummyLocation,
     ...location,
@@ -47,16 +49,21 @@ export async function createLocation(location) {
 
 export async function getLocation(locationId) {
   if (!locationId) return undefined;
-  await wait(3000);
+  await wait(DELAY);
   return dummyLocation;
 }
 
 export async function updateLocation(location) {
-  await wait(3000);
+  await wait(DELAY);
   return location;
 }
 
 export async function deleteLocation(locationId) {
-  await wait(3000);
+  await wait(DELAY);
   return true;
+}
+
+export async function getLocationFromPlace(placeOrPromise) {
+  const place = await placeOrPromise;
+  return await getLocation(place.locationId);
 }
