@@ -1,3 +1,7 @@
+export interface Auth {
+  user: User;
+}
+
 export interface User {
   id: number;
   name: string;
