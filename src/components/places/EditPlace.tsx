@@ -2,6 +2,7 @@
 
 import { use, useState } from 'react';
 import { createLocation, updateLocation, updatePlace } from '@/lib/dbUtils';
+import { UserContext } from '@/contexts/UserContext';
 import { LocationSelector } from '@/components/LocationSelector';
 
 interface InputProps {
@@ -10,6 +11,7 @@ interface InputProps {
 }
 
 export function EditPlace({ placePromise, locationPromise }: InputProps) {
+  const user = use(UserContext);
   const place = use(placePromise);
   const location = use(locationPromise);
   const [name, setName] = useState(place.name);
@@ -36,7 +38,10 @@ export function EditPlace({ placePromise, locationPromise }: InputProps) {
           ...location,
           ...coord,
         })
-      : await createLocation(coord);
+      : await createLocation({
+          ...coord,
+          createdBy: user.id,
+        });
 
     await updatePlace({
       ...place,
