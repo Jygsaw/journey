@@ -1,15 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { createLocation, updateLocation, updatePlace } from '@/lib/dbUtils';
 import { LocationSelector } from '@/components/LocationSelector';
 
 interface InputProps {
-  place: Place;
-  location?: Location;
+  placePromise: Promise<Place>;
+  locationPromise: Promise<Location>;
 }
 
-export function EditPlace({ place, location }: InputProps) {
+export function EditPlace({ placePromise, locationPromise }: InputProps) {
+  const place = use(placePromise);
+  const location = use(locationPromise);
   const [name, setName] = useState(place.name);
   const [desc, setDesc] = useState(place.desc);
   const [locationId, setLocationId] = useState(location?.id);
