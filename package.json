@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --fix"
   },
   "dependencies": {
     "next": "15.4.5",
@@ -23,6 +27,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
