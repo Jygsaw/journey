@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export function JourneysList() {
   const getJourneyRedirect = (journeyId) => () => redirect(`/journeys/${journeyId}`);

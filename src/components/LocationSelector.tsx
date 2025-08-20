@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
-import Map from 'ol/Map.js';
-import View from 'ol/View.js';
-import Overlay from 'ol/Overlay';
-import TileLayer from 'ol/layer/Tile.js';
-import OSM from 'ol/source/OSM.js';
-import { fromLonLat, toLonLat } from 'ol/proj.js';
-import { waitFor } from '@/lib/utils';
+import { useEffect, useRef } from "react";
+import Map from "ol/Map.js";
+import View from "ol/View.js";
+import Overlay from "ol/Overlay";
+import TileLayer from "ol/layer/Tile.js";
+import OSM from "ol/source/OSM.js";
+import { fromLonLat, toLonLat } from "ol/proj.js";
+import { waitFor } from "@/lib/utils";
 
 interface InputProps {
   locationId?: Location;
@@ -17,7 +17,7 @@ interface InputProps {
 export function LocationSelector({
   locationId,
   coord,
-  setLocation,
+  // setLocationId,
   setCoord,
 }: InputProps) {
   const mapRef = useRef(null);
@@ -52,20 +52,20 @@ export function LocationSelector({
         }),
       });
 
-      const markerElement = document.createElement('div');
+      const markerElement = document.createElement("div");
       markerElement.className = [
-        'w-3 h-3 bg-red-600 rounded-full',
-        'border-2 border-white shadow-[0_0_5px] shadow-black/50',
-      ].join(' ');
+        "w-3 h-3 bg-red-600 rounded-full",
+        "border-2 border-white shadow-[0_0_5px] shadow-black/50",
+      ].join(" ");
 
       const markerOverlay = new Overlay({
         element: markerElement,
-        positioning: 'center-center',
+        positioning: "center-center",
         stopEvent: false,
       });
       map.addOverlay(markerOverlay);
 
-      map.on('postrender', () => {
+      map.on("postrender", () => {
         const center = map.getView().getCenter();
         markerOverlay.setPosition(center);
         setCoord(toLonLat(center));

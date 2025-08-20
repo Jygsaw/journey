@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { use, useState } from 'react';
-import { createLocation, updateLocation, updatePlace } from '@/lib/dbUtils';
-import { UserContext } from '@/contexts/UserContext';
-import { LocationSelector } from '@/components/LocationSelector';
+import { use, useState } from "react";
+import { createLocation, updateLocation, updatePlace } from "@/lib/dbUtils";
+import { UserContext } from "@/contexts/UserContext";
+import { LocationSelector } from "@/components/LocationSelector";
 
 interface InputProps {
   placePromise: Promise<Place>;
@@ -23,25 +23,21 @@ export function EditPlace({ placePromise, locationPromise }: InputProps) {
   });
 
   const changeName = (e) => {
-    console.log("> changing name");
     setName(e.target.value);
   };
   const changeDesc = (e) => {
-    console.log("> changing desc");
     setDesc(e.target.value);
   };
-  const save = async (e) => {
-    console.log("> saving changes");
-
+  const save = async () => {
     const updatedLocation = locationId
       ? await updateLocation({
-          ...location,
-          ...coord,
-        })
+        ...location,
+        ...coord,
+      })
       : await createLocation({
-          ...coord,
-          createdBy: user.id,
-        });
+        ...coord,
+        createdBy: user.id,
+      });
 
     await updatePlace({
       ...place,
@@ -61,5 +57,5 @@ export function EditPlace({ placePromise, locationPromise }: InputProps) {
       <br />
       <button onClick={save}>Save</button>
     </section>
-  )
+  );
 }

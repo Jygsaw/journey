@@ -1,5 +1,5 @@
-import { AddJourneyButton } from './AddJourneyButton';
-import { JourneysList } from './JourneysList';
+import { AddJourneyButton } from "./AddJourneyButton";
+import { JourneysList } from "./JourneysList";
 
 export default function Page() {
   return (

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { use } from 'react';
-import { useRouter } from 'next/navigation';
-import { createPlace } from '@/lib/dbUtils';
-import { UserContext } from '@/contexts/UserContext';
+import { use } from "react";
+import { useRouter } from "next/navigation";
+import { createPlace } from "@/lib/dbUtils";
+import { UserContext } from "@/contexts/UserContext";
 
 export function AddPlaceButton() {
   const user = use(UserContext);

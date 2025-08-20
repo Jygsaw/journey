@@ -1,12 +1,12 @@
-import { redirect } from 'next/navigation';
-import { getUser } from '@/lib/dbUtils';
+import { redirect } from "next/navigation";
+import { getUser } from "@/lib/dbUtils";
 
 export const getAuth = async () => {
   const authenticated = {};
 
   const isLoggedIn = true;
   if (!isLoggedIn) {
-    redirect('/');
+    redirect("/");
   }
 
   const userId = 999999999;
@@ -14,4 +14,3 @@ export const getAuth = async () => {
 
   return authenticated;
 };
-

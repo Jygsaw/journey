@@ -1,5 +1,5 @@
-import { AddPlaceButton } from '@/components/places/AddPlaceButton';
-import { PlacesList } from '@/components/places/PlacesList';
+import { AddPlaceButton } from "@/components/places/AddPlaceButton";
+import { PlacesList } from "@/components/places/PlacesList";
 
 export default async function Page() {
   return (

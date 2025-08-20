@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export function AddMessageButton() {
-  const clickHandler = () => redirect('/messages/4');
+  const clickHandler = () => redirect("/messages/4");
   return <button onClick={clickHandler}>+ Message</button>;
 }

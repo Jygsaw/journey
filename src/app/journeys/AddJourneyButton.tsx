@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export function AddJourneyButton() {
-  const clickHandler = () => redirect('/journeys/4');
+  const clickHandler = () => redirect("/journeys/4");
   return <button onClick={clickHandler}>+ Journey</button>;
 }

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Auth } from '@/types';
-import { UserContext } from '@/contexts/UserContext';
+import { Auth } from "@/types";
+import { UserContext } from "@/contexts/UserContext";
 
 interface InputProps {
   auth: Auth,

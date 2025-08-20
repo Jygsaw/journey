@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export function MessagesList() {
   const getMessageRedirect = (messageId) => () => redirect(`/messages/${messageId}`);

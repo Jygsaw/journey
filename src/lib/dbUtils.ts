@@ -1,17 +1,17 @@
-import { User, Place, Location } from '@/types';
-import { wait } from '@/lib/utils';
+import { User, Place, Location } from "@/types";
+import { wait } from "@/lib/utils";
 
 const DELAY = 3000;
 
 const dummyUser: User = {
   id: 999999999,
-  name: 'Justin Cheung',
+  name: "Justin Cheung",
 };
 
 const dummyPlace: Place = {
   id: 999999999,
-  name: 'fakeName',
-  desc: 'fakeDesc',
+  name: "fakeName",
+  desc: "fakeDesc",
 };
 
 const dummyLocation: Location = {
@@ -29,6 +29,7 @@ export const createUser = async (user) => {
 };
 
 export const getUser = async (userId) => {
+  if (!userId) return undefined;
   await wait(DELAY);
   return dummyUser;
 };
@@ -49,23 +50,24 @@ export const createPlace = async (place) => {
     ...dummyPlace,
     ...place,
   };
-}
+};
 
 export const getPlace = async (placeId) => {
   if (!placeId) return undefined;
   await wait(DELAY);
   return dummyPlace;
-}
+};
 
 export const updatePlace = async (place) => {
   await wait(DELAY);
   return place;
-}
+};
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const deletePlace = async (placeId) => {
   await wait(DELAY);
   return true;
-}
+};
 
 export const createLocation = async (location) => {
   await wait(DELAY);
@@ -73,25 +75,26 @@ export const createLocation = async (location) => {
     ...dummyLocation,
     ...location,
   };
-}
+};
 
 export const getLocation = async (locationId) => {
   if (!locationId) return undefined;
   await wait(DELAY);
   return dummyLocation;
-}
+};
 
 export const updateLocation = async (location) => {
   await wait(DELAY);
   return location;
-}
+};
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const deleteLocation = async (locationId) => {
   await wait(DELAY);
   return true;
-}
+};
 
 export const getLocationFromPlace = async (placeOrPromise) => {
   const place = await placeOrPromise;
   return await getLocation(place.locationId);
-}
+};
