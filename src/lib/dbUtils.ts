@@ -1,24 +1,13 @@
 import { User, Place, Location } from "@/types";
 import { wait } from "@/lib/utils";
+import {
+  dummyUser,
+  dummyPlace,
+  dummyLocation,
+  dummyMessage,
+} from "@/lib/dummyData";
 
 const DELAY = 3000;
-
-const dummyUser: User = {
-  id: 999999999,
-  name: "Justin Cheung",
-};
-
-const dummyPlace: Place = {
-  id: 999999999,
-  name: "fakeName",
-  desc: "fakeDesc",
-};
-
-const dummyLocation: Location = {
-  id: 999999999,
-  latitude: 35.33960,
-  longitude: -119.13054,
-};
 
 export const createUser = async (user) => {
   await wait(DELAY);
@@ -97,4 +86,32 @@ export const deleteLocation = async (locationId) => {
 export const getLocationFromPlace = async (placeOrPromise) => {
   const place = await placeOrPromise;
   return await getLocation(place.locationId);
+};
+
+export const createMessage = async (message) => {
+  await wait(DELAY);
+  return {
+    ...dummyMessage,
+    ...message,
+  };
+};
+
+export const getMessage = async (messageId) => {
+  if (!messageId) return undefined;
+  await wait(DELAY);
+  return dummyMessage;
+};
+
+export const updateMessage = async (message) => {
+  await wait(DELAY);
+  return {
+    ...dummyMessage,
+    ...message,
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const deleteMessage = async (messageId) => {
+  await wait(DELAY);
+  return true;
 };
