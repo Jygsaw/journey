@@ -4,10 +4,22 @@ export const dummyUser: User = {
   name: "Justin Cheung",
 };
 
-export const dummyPlace: Place = {
-  id: 999999999,
-  name: "fakeName",
-  desc: "fakeDesc",
+export const dummyPlaceA: Place = {
+  id: 999999991,
+  name: "fakeNameA",
+  desc: "fakeDescA",
+  createdBy: 999999999,
+};
+export const dummyPlaceB: Place = {
+  id: 999999992,
+  name: "fakeNameB",
+  desc: "fakeDescB",
+  createdBy: 999999999,
+};
+export const dummyPlaceC: Place = {
+  id: 999999993,
+  name: "fakeNameC",
+  desc: "fakeDescC",
   createdBy: 999999999,
 };
 

@@ -1,15 +1,20 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { use } from "react";
+import Link from "next/link";
 
-export function PlacesList() {
-  const getPlaceRedirect = (placeId) => () => redirect(`/places/${placeId}`);
+interface InputProps {
+  placesPromise: Promise<Place[]>;
+}
+
+export const PlacesList = ({ placesPromise }: InputProps) => {
+  const places = use(placesPromise);
 
   return (
     <ul>
-      <li onClick={getPlaceRedirect(3)}>Place C</li>
-      <li onClick={getPlaceRedirect(2)}>Place B</li>
-      <li onClick={getPlaceRedirect(1)}>Place A</li>
+      {places.map(({ id, name }) =>
+        <li key={id}><Link href={`/places/${id}`}>{name}</Link></li>
+      )}
     </ul>
   );
-}
+};

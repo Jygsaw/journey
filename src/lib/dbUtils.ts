@@ -1,7 +1,9 @@
 import { wait } from "@/lib/utils";
 import {
   dummyUser,
-  dummyPlace,
+  dummyPlaceA,
+  dummyPlaceB,
+  dummyPlaceC,
   dummyLocation,
   dummyMessageA,
   dummyMessageB,
@@ -26,7 +28,10 @@ export const getUser = async (userId) => {
 
 export const updateUser = async (user) => {
   await wait(DELAY);
-  return user;
+  return {
+    ...dummyUser,
+    ...user,
+  };
 };
 
 export const deleteUser = async () => {
@@ -37,7 +42,7 @@ export const deleteUser = async () => {
 export const createPlace = async (place) => {
   await wait(DELAY);
   return {
-    ...dummyPlace,
+    ...dummyPlaceA,
     ...place,
   };
 };
@@ -45,18 +50,27 @@ export const createPlace = async (place) => {
 export const getPlace = async (placeId) => {
   if (!placeId) return undefined;
   await wait(DELAY);
-  return dummyPlace;
+  return dummyPlaceA;
 };
 
 export const updatePlace = async (place) => {
   await wait(DELAY);
-  return place;
+  return {
+    ...dummyPlaceA,
+    ...place,
+  };
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const deletePlace = async (placeId) => {
   await wait(DELAY);
   return true;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const getPlaces = async (journeyId) => {
+  await wait(DELAY);
+  return [ dummyPlaceA, dummyPlaceB, dummyPlaceC ];
 };
 
 export const createLocation = async (location) => {
@@ -75,7 +89,10 @@ export const getLocation = async (locationId) => {
 
 export const updateLocation = async (location) => {
   await wait(DELAY);
-  return location;
+  return {
+    ...dummyLocation,
+    ...location,
+  };
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -120,9 +137,5 @@ export const deleteMessage = async (messageId) => {
 export const getMessages = async (placeId) => {
   if (!placeId) return [];
   await wait(DELAY);
-  return [
-    dummyMessageA,
-    dummyMessageB,
-    dummyMessageC,
-  ];
+  return [ dummyMessageA, dummyMessageB, dummyMessageC ];
 };
