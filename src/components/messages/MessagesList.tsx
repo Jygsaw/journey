@@ -1,15 +1,20 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { use } from "react";
+import Link from "next/link";
 
-export function MessagesList() {
-  const getMessageRedirect = (messageId) => () => redirect(`/messages/${messageId}`);
+interface InputProps {
+  messagesPromise: Promise<Message[]>;
+}
+
+export const MessagesList = ({ messagesPromise }: InputProps) => {
+  const messages = use(messagesPromise);
 
   return (
     <ul>
-      <li onClick={getMessageRedirect(3)}>Message C</li>
-      <li onClick={getMessageRedirect(2)}>Message B</li>
-      <li onClick={getMessageRedirect(1)}>Message A</li>
+      {messages.map(({ id, content }) =>
+        <li key={id}><Link href={`/messages/${id}`}>{content}</Link></li>
+      )}
     </ul>
   );
-}
+};

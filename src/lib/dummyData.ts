@@ -1,3 +1,4 @@
+import { User, Place, Location } from "@/types";
 export const dummyUser: User = {
   id: 999999999,
   name: "Justin Cheung",
@@ -17,9 +18,21 @@ export const dummyLocation: Location = {
   createdBy: 999999999,
 };
 
-export const dummyMessage: Message = {
-  id: 999999999,
+export const dummyMessageA: Message = {
+  id: 999999991,
   placeId: 999999999,
-  content: "fakeMessage",
+  content: "fakeMessageA",
+  createdBy: 999999999,
+};
+export const dummyMessageB: Message = {
+  id: 999999992,
+  placeId: 999999999,
+  content: "fakeMessageB",
+  createdBy: 999999999,
+};
+export const dummyMessageC: Message = {
+  id: 999999993,
+  placeId: 999999999,
+  content: "fakeMessageC",
   createdBy: 999999999,
 };

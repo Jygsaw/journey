@@ -2,14 +2,12 @@
 
 import { use, useState } from "react";
 import { updateMessage } from "@/lib/dbUtils";
-import { UserContext } from "@/contexts/UserContext";
 
 interface InputProps {
   messagePromise: Promise<Message>;
 }
 
-export const EditMessage = ({ messagePromise }) => {
-  const user = use(UserContext);
+export const EditMessage = ({ messagePromise }: InputProps) => {
   const message = use(messagePromise);
   const [content, setContent] = useState(message.content);
 

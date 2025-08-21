@@ -1,10 +1,11 @@
-import { User, Place, Location } from "@/types";
 import { wait } from "@/lib/utils";
 import {
   dummyUser,
   dummyPlace,
   dummyLocation,
-  dummyMessage,
+  dummyMessageA,
+  dummyMessageB,
+  dummyMessageC,
 } from "@/lib/dummyData";
 
 const DELAY = 3000;
@@ -91,7 +92,7 @@ export const getLocationFromPlace = async (placeOrPromise) => {
 export const createMessage = async (message) => {
   await wait(DELAY);
   return {
-    ...dummyMessage,
+    ...dummyMessageA,
     ...message,
   };
 };
@@ -99,13 +100,13 @@ export const createMessage = async (message) => {
 export const getMessage = async (messageId) => {
   if (!messageId) return undefined;
   await wait(DELAY);
-  return dummyMessage;
+  return dummyMessageA;
 };
 
 export const updateMessage = async (message) => {
   await wait(DELAY);
   return {
-    ...dummyMessage,
+    ...dummyMessageA,
     ...message,
   };
 };
@@ -114,4 +115,14 @@ export const updateMessage = async (message) => {
 export const deleteMessage = async (messageId) => {
   await wait(DELAY);
   return true;
+};
+
+export const getMessages = async (placeId) => {
+  if (!placeId) return [];
+  await wait(DELAY);
+  return [
+    dummyMessageA,
+    dummyMessageB,
+    dummyMessageC,
+  ];
 };
