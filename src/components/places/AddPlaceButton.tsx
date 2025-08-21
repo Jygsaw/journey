@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { createPlace } from "@/lib/dbUtils";
 import { UserContext } from "@/contexts/UserContext";
 
-export function AddPlaceButton() {
+export const AddPlaceButton = () => {
   const user = use(UserContext);
   const router = useRouter();
 
@@ -17,4 +17,4 @@ export function AddPlaceButton() {
   };
 
   return <button onClick={clickHandler}>+ Place</button>;
-}
+};
