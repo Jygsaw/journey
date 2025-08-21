@@ -17,6 +17,8 @@ interface InputProps {
 export function LocationSelector({
   locationId,
   coord,
+  // TODO: extend LocationSelector to allow selection of
+  // public shared locations instead of custom location
   // setLocationId,
   setCoord,
 }: InputProps) {
@@ -76,7 +78,7 @@ export function LocationSelector({
 
     return () => {
       async function disposeMap() {
-        await waitFor(() => !!map);
+        await waitFor(() => !!map, 100, 5000);
         map.setTarget(undefined);
         map.dispose();
       }
