@@ -1,10 +1,13 @@
 import { wait } from "@/lib/utils";
 import {
-  dummyUser,
+  dummyUserA,
+  dummyJourneyA,
+  dummyJourneyB,
+  dummyJourneyC,
   dummyPlaceA,
   dummyPlaceB,
   dummyPlaceC,
-  dummyLocation,
+  dummyLocationA,
   dummyMessageA,
   dummyMessageB,
   dummyMessageC,
@@ -15,7 +18,7 @@ const DELAY = 3000;
 export const createUser = async (user) => {
   await wait(DELAY);
   return {
-    ...dummyUser,
+    ...dummyUserA,
     ...user,
   };
 };
@@ -23,13 +26,13 @@ export const createUser = async (user) => {
 export const getUser = async (userId) => {
   if (!userId) return undefined;
   await wait(DELAY);
-  return dummyUser;
+  return dummyUserA;
 };
 
 export const updateUser = async (user) => {
   await wait(DELAY);
   return {
-    ...dummyUser,
+    ...dummyUserA,
     ...user,
   };
 };
@@ -37,6 +40,40 @@ export const updateUser = async (user) => {
 export const deleteUser = async () => {
   await wait(DELAY);
   return true;
+};
+
+export const createJourney = async (journey) => {
+  await wait(DELAY);
+  return {
+    ...dummyJourneyA,
+    ...journey,
+  };
+};
+
+export const getJourney = async (journeyId) => {
+  if (!journeyId) return undefined;
+  await wait(DELAY);
+  return dummyJourneyA;
+};
+
+export const updateJourney = async (journey) => {
+  await wait(DELAY);
+  return {
+    ...dummyJourneyA,
+    ...journey,
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const deleteJourney = async (journeyId) => {
+  await wait(DELAY);
+  return true;
+};
+
+export const getJourneys = async (userId) => {
+  if (!userId) return [];
+  await wait(DELAY);
+  return [ dummyJourneyA, dummyJourneyB, dummyJourneyC ];
 };
 
 export const createPlace = async (place) => {
@@ -67,16 +104,21 @@ export const deletePlace = async (placeId) => {
   return true;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getPlaces = async (journeyId) => {
+export const getPlaces = async () => {
   await wait(DELAY);
+  return [ dummyPlaceA, dummyPlaceB, dummyPlaceC ];
+};
+
+export const getPlacesFromJourney = async (journeyOrPromise) => {
+  const journey = await journeyOrPromise;
+  // TODO: fetch specific places based on journey.places
   return [ dummyPlaceA, dummyPlaceB, dummyPlaceC ];
 };
 
 export const createLocation = async (location) => {
   await wait(DELAY);
   return {
-    ...dummyLocation,
+    ...dummyLocationA,
     ...location,
   };
 };
@@ -84,13 +126,13 @@ export const createLocation = async (location) => {
 export const getLocation = async (locationId) => {
   if (!locationId) return undefined;
   await wait(DELAY);
-  return dummyLocation;
+  return dummyLocationA;
 };
 
 export const updateLocation = async (location) => {
   await wait(DELAY);
   return {
-    ...dummyLocation,
+    ...dummyLocationA,
     ...location,
   };
 };

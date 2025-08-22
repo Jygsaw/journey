@@ -7,10 +7,19 @@ export interface User {
   name: string;
 }
 
+export interface Journey {
+  id: number;
+  name: string;
+  desc: string;
+  places: Place[];
+  createdBy: number;
+}
+
 export interface Place {
   id: number;
   name: string;
   desc: string;
+  locationId?: number;
   createdBy: number;
 }
 
