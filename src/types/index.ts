@@ -19,6 +19,7 @@ export interface Place {
   id: number;
   name: string;
   desc: string;
+  usedByCount: number;
   locationId?: number;
   createdBy: number;
 }

@@ -36,6 +36,7 @@ export const dummyPlaceA: Place = {
   id: 300000001,
   name: "Place A",
   desc: "Description of Place A.",
+  usedByCount: 2,
   locationId: 400000001,
   createdBy: 100000001,
 };
@@ -43,6 +44,7 @@ export const dummyPlaceB: Place = {
   id: 300000002,
   name: "Place B",
   desc: "Description of Place B.",
+  usedByCount: 2,
   locationId: 400000002,
   createdBy: 100000002,
 };
@@ -50,6 +52,7 @@ export const dummyPlaceC: Place = {
   id: 300000003,
   name: "Place C",
   desc: "Description of Place C.",
+  usedByCount: 2,
   locationId: 400000003,
   createdBy: 100000001,
 };
