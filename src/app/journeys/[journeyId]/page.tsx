@@ -1,11 +1,22 @@
-import { AddPlaceButton } from "@/components/places/AddPlaceButton";
-import { PlacesList } from "@/components/places/PlacesList";
+import { Suspense } from "react";
+import { getJourney, getPlacesFromJourney } from "@/api/apiUtils";
+import { EditJourney } from "@/components/journeys/EditJourney";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: "View Journey",
+  description: "View and edit a journey",
+};
+
+export default async function Page({ params }) {
+  const { journeyId } = await params;
+  const journeyPromise = getJourney(journeyId);
+  const placesPromise = getPlacesFromJourney(journeyPromise);
+
   return (
     <main>
-      <AddPlaceButton />
-      <PlacesList />
+      <Suspense fallback="Loading...">
+        <EditJourney journeyPromise={journeyPromise} placesPromise={placesPromise} />
+      </Suspense>
     </main>
   );
 }
