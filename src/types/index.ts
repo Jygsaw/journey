@@ -3,37 +3,38 @@ export interface Auth {
 }
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
+  email: string;
 }
 
 export interface Journey {
-  id: number;
+  id: string;
   name: string;
   desc: string;
-  places: Place[];
-  createdBy: number;
+  path: string[];
+  createdBy: string;
 }
 
 export interface Place {
-  id: number;
+  id: string;
   name: string;
   desc: string;
   usedByCount: number;
-  locationId?: number;
-  createdBy: number;
+  locationId: string;
+  createdBy: string;
 }
 
 export interface Location {
-  id: number;
-  latitude: number;
+  id: string;
   longitude: number;
-  createdBy: number;
+  latitude: number;
+  createdBy: string;
 }
 
 export interface Message {
-  id: number;
-  placeId: number;
+  id: string;
+  placeId: string;
   content: string;
-  createdBy: number;
+  createdBy: string;
 }
