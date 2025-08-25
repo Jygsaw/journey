@@ -50,7 +50,7 @@ export function LocationSelector({
         ],
         view: new View({
           center: fromLonLat(initCenter),
-          zoom: 20,
+          zoom: 18,
         }),
       });
 

@@ -1,10 +1,9 @@
 import { Suspense } from "react";
-import { getMessage } from "@/lib/dbUtils";
+import { getMessage } from "@/api/apiUtils";
 import { EditMessage } from "@/components/messages/EditMessage";
 
 export default async function Page({ params }) {
-  let { messageId } = await params;
-  messageId = Number(messageId);
+  const { messageId } = await params;
   const messagePromise = getMessage(messageId);
 
   return (

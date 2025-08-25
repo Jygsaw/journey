@@ -2,7 +2,7 @@
 
 import { use } from "react";
 import { useRouter } from "next/navigation";
-import { createPlace, getJourney, updateJourney } from "@/lib/dbUtils";
+import { createPlace, getJourney, updateJourney } from "@/api/apiUtils";
 import { UserContext } from "@/contexts/UserContext";
 
 interface InputProps {
@@ -10,8 +10,8 @@ interface InputProps {
 }
 
 export const AddPlaceButton = ({ journeyId }: InputProps) => {
-  const user = use(UserContext);
   const router = useRouter();
+  const user = use(UserContext);
 
   const clickHandler = async () => {
     const place = await createPlace({
@@ -21,7 +21,7 @@ export const AddPlaceButton = ({ journeyId }: InputProps) => {
 
     if (journeyId) {
       const journey = await getJourney(journeyId);
-      journey.places.push(place.id);
+      journey.path.push(place.id);
       await updateJourney(journey);
     }
 

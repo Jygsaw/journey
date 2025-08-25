@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { getAuth } from "@/lib/authUtils";
-import { getJourneys } from "@/lib/dbUtils";
+import { getJourneysForUser } from "@/api/apiUtils";
 import { AddJourneyButton } from "@/components/journeys/AddJourneyButton";
 import { JourneysList } from "@/components/journeys/JourneysList";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const { user } = await getAuth();
-  const journeysPromise = getJourneys(user.id);
+  const journeysPromise = getJourneysForUser(user.id);
 
   return (
     <main>

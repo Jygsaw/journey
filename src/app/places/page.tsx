@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getPlaces } from "@/lib/dbUtils";
+import { getPlaces } from "@/api/apiUtils";
 import { AddPlaceButton } from "@/components/places/AddPlaceButton";
 import { PlacesList } from "@/components/places/PlacesList";
 

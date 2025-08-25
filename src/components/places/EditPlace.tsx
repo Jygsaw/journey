@@ -1,7 +1,8 @@
 "use client";
 
 import { use, useState } from "react";
-import { createLocation, updateLocation, updatePlace } from "@/lib/dbUtils";
+import { useRouter } from "next/navigation";
+import { createLocation, updateLocation, updatePlace, deletePlace } from "@/api/apiUtils";
 import { UserContext } from "@/contexts/UserContext";
 import { LocationSelector } from "@/components/LocationSelector";
 
@@ -11,6 +12,7 @@ interface InputProps {
 }
 
 export function EditPlace({ placePromise, locationPromise }: InputProps) {
+  const router = useRouter();
   const user = use(UserContext);
   const place = use(placePromise);
   const location = use(locationPromise);
@@ -28,14 +30,16 @@ export function EditPlace({ placePromise, locationPromise }: InputProps) {
   const changeDesc = (e) => {
     setDesc(e.target.value);
   };
-  const save = async () => {
+  const handleSave = async () => {
     const updatedLocation = locationId
       ? await updateLocation({
         ...location,
-        ...coord,
+        longitude: coord[0],
+        latitude: coord[1],
       })
       : await createLocation({
-        ...coord,
+        longitude: coord[0],
+        latitude: coord[1],
         createdBy: user.id,
       });
 
@@ -45,17 +49,26 @@ export function EditPlace({ placePromise, locationPromise }: InputProps) {
       desc,
       locationId: updatedLocation.id,
     });
+
+    router.back();
+  };
+  const handleDelete = async () => {
+    await deletePlace(place.id);
+
+    router.back();
   };
 
   return (
     <section>
       <LocationSelector {...{ locationId, coord, setLocationId, setCoord }} />
       <br />
-      <input type="text" name="name" value={name} onChange={changeName} />
+      <input type="text" onChange={changeName} value={name} placeholder="Name" />
       <br />
-      <textarea value={desc} onChange={changeDesc} />
+      <textarea onChange={changeDesc} value={desc} placeholder="Description" />
       <br />
-      <button onClick={save}>Save</button>
+      <button onClick={handleSave}>Save</button>
+      <br />
+      <button onClick={handleDelete}>Delete</button>
     </section>
   );
 }

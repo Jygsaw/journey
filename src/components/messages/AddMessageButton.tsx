@@ -2,7 +2,7 @@
 
 import { use } from "react";
 import { useRouter } from "next/navigation";
-import { createMessage } from "@/lib/dbUtils";
+import { createMessage } from "@/api/apiUtils";
 import { UserContext } from "@/contexts/UserContext";
 
 interface InputProps {
@@ -10,8 +10,8 @@ interface InputProps {
 }
 
 export const AddMessageButton =({ placeId }: InputProps) => {
-  const user = use(UserContext);
   const router = useRouter();
+  const user = use(UserContext);
 
   const clickHandler = async () => {
     const message = await createMessage({

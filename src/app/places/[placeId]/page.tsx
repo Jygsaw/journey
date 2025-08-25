@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getPlace, getLocationFromPlace, getMessages } from "@/lib/dbUtils";
+import { getPlace, getLocationFromPlace, getMessagesForPlace } from "@/api/apiUtils";
 import { EditPlace } from "@/components/places/EditPlace";
 import { AddMessageButton } from "@/components/messages/AddMessageButton";
 import { MessagesList } from "@/components/messages/MessagesList";
@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({ params }) {
-  let { placeId } = await params;
-  placeId = Number(placeId);
+  const { placeId } = await params;
   const placePromise = getPlace(placeId);
   const locationPromise = getLocationFromPlace(placePromise);
-  const messagesPromise = getMessages(placeId);
+  const messagesPromise = getMessagesForPlace(placeId);
 
   return (
     <main>
