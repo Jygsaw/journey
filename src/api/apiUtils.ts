@@ -151,6 +151,11 @@ export const deleteMessage = async (id) => {
   return await deleteRecord("messages", id);
 };
 
+export const getUserByEmail = async (email) => {
+  const users = await readRecords("users");
+  return users.find(user => user.email === email);
+};
+
 export const getJourneysForUser = async (userId) => {
   const journeys = await readRecords("journeys");
   return journeys.filter(journey => journey.createdBy === userId);

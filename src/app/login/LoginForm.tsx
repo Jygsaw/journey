@@ -1,11 +1,31 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { authenticate } from "@/lib/authUtils";
 
-export function LoginForm() {
-  const clickHandler = () => redirect("/dashboard");
+export const LoginForm = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+
+  const changeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleSubmit = async () => {
+    const success = await authenticate(email);
+
+    if (success) {
+      router.push("/dashboard");
+    } else {
+      // TODO: handle failed login
+    }
+  };
 
   return (
-    <button onClick={clickHandler}>Log In</button>
+    <section>
+      <input type="text" onChange={changeEmail} value={email} placeholder="Email" />
+      <br />
+      <button type="button" onClick={handleSubmit}>Submit</button>
+    </section>
   );
-}
+};
