@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "f09cbfc4-a1c7-4506-a797-3eb7dd2545c7",
+    "name": "Home",
+    "desc": "Mobile home in North San Jose",
+    "usedByCount": 0,
+    "locationId": "296ec59f-7320-438c-9add-1d50d3e49ca6",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "1e6515ae-d10a-40be-bc9a-79ac4862c10c",
+    "name": "Food",
+    "desc": "Panda Express",
+    "usedByCount": 0,
+    "locationId": "fcfe8976-97e1-45a2-a711-1b5320c1b68a",
+    "createdBy": "ead90ff6-f073-49bc-aa9b-4e9a8c242ec5"
+  },
+  {
+    "id": "6456fa38-cf66-4073-a4e8-aa8e4f302fe9",
+    "name": "Supplies",
+    "desc": "Target @First",
+    "usedByCount": 0,
+    "locationId": "1fc0222f-abc4-430c-a105-b7098d13aac6",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "e5c5c58d-128d-4cdd-9e8d-c909540c8723",
+    "name": "Start",
+    "desc": "Homebase",
+    "usedByCount": 1,
+    "locationId": "8a3b390b-e2ba-4bb9-b90d-05e4e6c47fe5",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "d68c5765-f902-4e08-a836-07abab6c142d",
+    "name": "Stockpile",
+    "desc": "Non-perishables",
+    "usedByCount": 1,
+    "locationId": "19a58d48-002d-4f5e-8b20-948afe9f4812",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "a437538f-c8e9-4cac-9273-9a9bc5f98e21",
+    "name": "Pantry",
+    "desc": "Perishables",
+    "usedByCount": 1,
+    "locationId": "72f40e36-c99a-49f7-aa88-d3f802d7703c",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  }
+]

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc",
+    "name": "Justin Cheung",
+    "email": "jygsaw@gmail.com"
+  },
+  {
+    "id": "ead90ff6-f073-49bc-aa9b-4e9a8c242ec5",
+    "name": "Jia-Lor Cheung",
+    "email": "jialorcheung@gmail.com"
+  },
+  {
+    "id": "0f70c58a-0652-4c99-bb4d-269b6a6d75a4",
+    "name": "Michael Tsai",
+    "email": "miketsai@gmail.com"
+  }
+]

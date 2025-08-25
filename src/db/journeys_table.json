@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "ad66725e-76f0-4704-bb77-55d297a69d54",
+    "name": "Patrol",
+    "desc": "Walking the perimeter",
+    "path": [
+      "e5c5c58d-128d-4cdd-9e8d-c909540c8723",
+      "d68c5765-f902-4e08-a836-07abab6c142d",
+      "a437538f-c8e9-4cac-9273-9a9bc5f98e21"
+    ],
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  }
+]

@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "296ec59f-7320-438c-9add-1d50d3e49ca6",
+    "longitude": -121.95902547729052,
+    "latitude": 37.41696796497442,
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "fcfe8976-97e1-45a2-a711-1b5320c1b68a",
+    "longitude": -121.95504817865266,
+    "latitude": 37.41624662790544,
+    "createdBy": "ead90ff6-f073-49bc-aa9b-4e9a8c242ec5"
+  },
+  {
+    "id": "1fc0222f-abc4-430c-a105-b7098d13aac6",
+    "longitude": -121.95614230170743,
+    "latitude": 37.41804002271593,
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "8a3b390b-e2ba-4bb9-b90d-05e4e6c47fe5",
+    "longitude": -121.9590380416572,
+    "latitude": 37.41698946703053,
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "19a58d48-002d-4f5e-8b20-948afe9f4812",
+    "longitude": -121.9554898207656,
+    "latitude": 37.418084696202996,
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "72f40e36-c99a-49f7-aa88-d3f802d7703c",
+    "longitude": -121.95482075836813,
+    "latitude": 37.416316602004,
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  }
+]

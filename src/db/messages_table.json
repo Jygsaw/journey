@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "7ad7afa1-0390-4054-924d-99a1212ee64a",
+    "placeId": "f09cbfc4-a1c7-4506-a797-3eb7dd2545c7",
+    "content": "Not the most comfortable place, but at least it's shelter.",
+    "createdBy": "89d20a5f-3808-4b5e-b9fc-b41d1778b9cc"
+  },
+  {
+    "id": "892e3306-7876-4748-a2c0-e23da43533f1",
+    "placeId": "1e6515ae-d10a-40be-bc9a-79ac4862c10c",
+    "content": "Cheap food if you always fill out the receipt survey!",
+    "createdBy": "ead90ff6-f073-49bc-aa9b-4e9a8c242ec5"
+  },
+  {
+    "id": "75f9daea-f6d0-4b97-bd65-8d2268562b5b",
+    "placeId": "6456fa38-cf66-4073-a4e8-aa8e4f302fe9",
+    "content": "You can buy groceries here.",
+    "createdBy": "0f70c58a-0652-4c99-bb4d-269b6a6d75a4"
+  }
+]
