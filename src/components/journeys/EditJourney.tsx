@@ -5,16 +5,19 @@ import { useRouter } from "next/navigation";
 import { updateJourney, deleteJourney } from "@/api/apiUtils";
 import Link from "next/link";
 import { AddPlaceButton } from "@/components/places/AddPlaceButton";
+import { JourneyViewer } from "@/components/maps/JourneyViewer";
 
 interface InputProps {
   journeyPromise: Promise<Journey>;
-  placesPromise: Promise<Places[]>;
+  placesPromise: Promise<Place[]>;
+  locationsPromise: Promise<Location[]>;
 }
 
-export const EditJourney = ({ journeyPromise, placesPromise }: InputProps) => {
+export const EditJourney = ({ journeyPromise, placesPromise, locationsPromise }: InputProps) => {
   const router = useRouter();
   const journey = use(journeyPromise);
   const places = use(placesPromise);
+  const locations = use(locationsPromise);
   const [name, setName] = useState(journey.name);
   const [desc, setDesc] = useState(journey.desc);
   const [path, setPath] = useState(journey.path);
@@ -42,6 +45,8 @@ export const EditJourney = ({ journeyPromise, placesPromise }: InputProps) => {
 
   return (
     <section>
+      <JourneyViewer path={journey.path} places={places} locations={locations} />
+      <br />
       <input onChange={changeName} value={name} placeholder="Name" />
       <br />
       <textarea onChange={changeDesc} value={desc} placeholder="Describe this journey" />

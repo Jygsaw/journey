@@ -4,7 +4,7 @@ import { use, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createLocation, updateLocation, updatePlace, deletePlace } from "@/api/apiUtils";
 import { UserContext } from "@/contexts/UserContext";
-import { LocationSelector } from "@/components/LocationSelector";
+import { LocationSelector } from "@/components/maps/LocationSelector";
 
 interface InputProps {
   placePromise: Promise<Place>;
